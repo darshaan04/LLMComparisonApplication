@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #07111f;
+  --bg-2: #0d1830;
+  --panel: rgba(13, 24, 48, 0.78);
+  --panel-strong: rgba(11, 20, 39, 0.92);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #eef4ff;
+  --muted: #95a4c7;
+  --soft: #c9d4ef;
+  --input: rgba(255, 255, 255, 0.045);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --button: linear-gradient(135deg, #22c55e 0%, #4f7cff 100%);
+}
+
+body {
+  font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 24%),
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 24%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--text);
+  padding: 32px 20px;
+}
+
+.app-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-section h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+  color: #f8fbff;
+}
+
+.hero-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.shared-prompt-container {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.shared-prompt-header {
+  margin-bottom: 16px;
+}
+
+.shared-prompt-header h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #f3f7ff;
+}
+
+.shared-prompt-header p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.shared-prompt-area {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.shared-prompt-area textarea {
+  flex: 1;
+  min-height: 150px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--input);
+  color: var(--text);
+  resize: vertical;
+  font-size: 1rem;
+  line-height: 1.7;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.shared-prompt-area textarea::placeholder {
+  color: #8190b3;
+}
+
+.shared-prompt-area textarea:focus {
+  border-color: rgba(79, 124, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.submit-all-btn {
+  min-width: 220px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 18px;
+  background: var(--button);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  align-self: stretch;
+  box-shadow: 0 16px 34px rgba(76, 94, 255, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-all-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 38px rgba(76, 94, 255, 0.34);
+}
+
+.submit-all-btn:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.model-box {
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  padding: 24px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-box::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+.model-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.model-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.model-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.model-box h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.model-status {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.response-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.response-area h3 {
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.response-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.015)
+  );
+  padding: 18px;
+}
+
+.response-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.response-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.response-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+.response-text {
+  white-space: pre-wrap;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #edf3ff;
+}
+
+.placeholder-text {
+  color: #8fa0c5;
+  text-align: center;
+  font-style: italic;
+  margin-top: 28px;
+}
+
+@media (max-width: 980px) {
+  .shared-prompt-area {
+    flex-direction: column;
+  }
+
+  .submit-all-btn {
+    min-width: 100%;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-box {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 18px 14px;
+  }
+
+  .shared-prompt-container,
+  .model-box {
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .hero-section {
+    margin-bottom: 22px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .shared-prompt-area textarea {
+    min-height: 130px;
+  }
+
+  .model-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .model-box h2 {
+    font-size: 1.28rem;
+  }
+
+  .response-content {
+    padding: 14px;
+  }
+}
