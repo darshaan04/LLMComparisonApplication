@@ -81,17 +81,3 @@ This project also highlights backend engineering skills such as API design, mult
 1. Install dependencies.
 2. Start the React development server.
 3. Open the application in the browser and enter a prompt.
-
-## Suggested GitHub sections
-
-Recommended GitHub repository fields and pinned content often include a clear README, concise repository description, setup guidance, and project purpose so visitors immediately understand the value of the project.[6][4][7]
-
-Add these to the repository page:
-
-- Repository description: `Compare OpenAI and DeepSeek-R1:1.5B side by side using Spring Boot, Spring AI, React, and Ollama.`
-- Website/demo link: add later if deployed.
-- Topics: `spring-boot`, `spring-ai`, `react`, `openai`, `ollama`, `deepseek`, `llm`, `java`, `full-stack`, `ai-project`
-
-## License
-
-Add a license that matches how the repository will be shared, such as MIT for a public portfolio project if open reuse is allowed.[4]
